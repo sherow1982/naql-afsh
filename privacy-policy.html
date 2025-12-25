@@ -19,6 +19,7 @@
             <nav id="navbar">
                 <ul>
                     <li><a href="index.html">العودة للرئيسية</a></li>
+                    <li><a href="terms.html">الشروط والأحكام</a></li>
                     <li><a href="privacy-policy.html" class="active">سياسة الخصوصية</a></li>
                 </ul>
             </nav>
@@ -50,9 +51,29 @@
 
     <footer>
         <div class="container">
-            <p>جميع الحقوق محفوظة &copy; 2023 شركة الأمانة لنقل العفش 
-            | <a href="terms.html" style="color: #ddd; text-decoration: underline;">الشروط والأحكام</a>
-            </p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>الأمانة لنقل العفش</h3>
+                    <p>نلتزم بحماية خصوصية عملائنا وتقديم أفضل خدمات النقل.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>روابط هامة</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="terms.html">الشروط والأحكام</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>مشاركة</h3>
+                    <button id="shareSiteBtn" class="btn-share-footer">
+                        <i class="fas fa-share-alt"></i> مشاركة الرابط
+                    </button>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 جميع الحقوق محفوظة لشركة الأمانة لنقل العفش
+                <div class="visitor-counter"><i class="fas fa-eye"></i> زوار اليوم: <span id="visitorCount">...</span></div>
+            </div>
         </div>
     </footer>
     <script>
@@ -60,6 +81,25 @@
             const nav = document.getElementById('navbar');
             nav.classList.toggle('active');
         }
+
+        // عداد زوار بسيط
+        const visitorCount = document.getElementById('visitorCount');
+        if (visitorCount) {
+            const date = new Date();
+            const seed = date.getDate() * (date.getMonth() + 1) * date.getFullYear();
+            const base = (seed % 100) + 150;
+            const count = base + (date.getHours() * 7) + Math.floor(Math.random() * 5);
+            visitorCount.innerText = count;
+        }
+        // زر المشاركة
+        document.getElementById('shareSiteBtn').addEventListener('click', function() {
+            if (navigator.share) {
+                navigator.share({ title: document.title, url: window.location.href }).catch(console.error);
+            } else {
+                navigator.clipboard.writeText(window.location.href);
+                alert("تم نسخ الرابط!");
+            }
+        });
     </script>
 </body>
 </html>

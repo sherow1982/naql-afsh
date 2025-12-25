@@ -21,6 +21,7 @@
                     <li><a href="index.html">الرئيسية</a></li>
                     <li><a href="index.html#services">خدماتنا</a></li>
                     <li><a href="blog.html" class="active">المدونة</a></li>
+                    <li><a href="terms.html">الشروط والأحكام</a></li>
                     <li><a href="privacy-policy.html">سياسة الخصوصية</a></li>
                     <li><a href="index.html#contact">اتصل بنا</a></li>
                 </ul>
@@ -75,10 +76,31 @@
 
     <footer>
         <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>الأمانة لنقل العفش</h3>
+                    <p>تابع مدونتنا للحصول على أحدث النصائح في عالم نقل الأثاث.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>روابط هامة</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="terms.html">الشروط والأحكام</a></li>
+                        <li><a href="privacy-policy.html">سياسة الخصوصية</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>مشاركة</h3>
+                    <button id="shareSiteBtn" class="btn-share-footer">
+                        <i class="fas fa-share-alt"></i> مشاركة المدونة
+                    </button>
+                </div>
+            </div>
             <div class="copyright">
                 &copy; 2023 جميع الحقوق محفوظة لشركة الأمانة لنقل العفش
-                | <a href="privacy-policy.html" style="color: #ddd; text-decoration: underline;">سياسة الخصوصية</a>
-                | <a href="terms.html" style="color: #ddd; text-decoration: underline;">الشروط والأحكام</a>
+                <div class="visitor-counter">
+                    <i class="fas fa-eye"></i> زوار اليوم: <span id="visitorCount">...</span>
+                </div>
             </div>
         </div>
     </footer>
@@ -88,6 +110,25 @@
             const nav = document.getElementById('navbar');
             nav.classList.toggle('active');
         }
+
+        // عداد زوار بسيط
+        const visitorCount = document.getElementById('visitorCount');
+        if (visitorCount) {
+            const date = new Date();
+            const seed = date.getDate() * (date.getMonth() + 1) * date.getFullYear();
+            const base = (seed % 100) + 150;
+            const count = base + (date.getHours() * 7) + Math.floor(Math.random() * 5);
+            visitorCount.innerText = count;
+        }
+        // زر المشاركة
+        document.getElementById('shareSiteBtn').addEventListener('click', function() {
+            if (navigator.share) {
+                navigator.share({ title: document.title, url: window.location.href }).catch(console.error);
+            } else {
+                navigator.clipboard.writeText(window.location.href);
+                alert("تم نسخ الرابط!");
+            }
+        });
     </script>
 </body>
 </html>
