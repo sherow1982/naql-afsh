@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- تسريع تحميل صورة الخلفية الرئيسية (LCP) -->
-    <link rel="preload" as="image" href="بانر شركة نقل عفش.webp">
+    <link rel="preload" as="image" href="galleria/بانر شركة نقل عفش.webp">
 
     <!-- ربط ملف التنسيق -->
     <link rel="stylesheet" href="style.css">
@@ -96,6 +96,7 @@
                     <li><a href="#home" onclick="toggleMenu()">الرئيسية</a></li>
                     <li><a href="#about" onclick="toggleMenu()">من نحن</a></li>
                     <li><a href="#services" onclick="toggleMenu()">خدماتنا</a></li>
+                    <li><a href="#gallery" onclick="toggleMenu()">أعمالنا</a></li>
                     <li><a href="#testimonials" onclick="toggleMenu()">آراء العملاء</a></li>
                     <li><a href="#faq" onclick="toggleMenu()">الأسئلة الشائعة</a></li>
                     <li><a href="blog.html">المدونة</a></li>
@@ -157,10 +158,10 @@
             </div>
             <div class="cmp-images-row">
                 <div class="cmp-image shine-effect">
-                    <img src="لماذا تختار صفحة الهبوط بديل لخرائط جوجل.png" alt="مقارنة صفحة الهبوط وخرائط جوجل 1" loading="lazy">
+                    <img src="galleria/لماذا تختار صفحة الهبوط بديل لخرائط جوجل.webp" alt="تحليلات ومقارنة الأداء" loading="lazy">
                 </div>
                 <div class="cmp-image shine-effect">
-                    <img src="لماذا تختار صفحة الهبوط بديل لخرائط جوجل-2.png" alt="مقارنة صفحة الهبوط وخرائط جوجل 2" loading="lazy">
+                    <img src="galleria/لماذا تختار صفحة الهبوط بديل لخرائط جوجل-2.webp" alt="نمو الأعمال والنتائج" loading="lazy">
                 </div>
             </div>
         </div>
@@ -255,9 +256,22 @@
         </div>
     </section>
 
+    <!-- معرض الصور (Gallery) -->
+    <section id="gallery" class="gallery-section container fade-in">
+        <h2 class="section-title">معرض أعمالنا</h2>
+        <p style="text-align: center; margin-bottom: 30px; color: #666;">صور حقيقية من عمليات النقل والتغليف التي قمنا بها لعملائنا الكرام.</p>
+        <div class="gallery-wrapper">
+            <button class="gallery-nav-btn prev-btn" onclick="scrollGallery('prev')"><i class="fas fa-chevron-right"></i></button>
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- الصور سيتم إضافتها هنا تلقائياً بواسطة الجافاسكريبت -->
+            </div>
+            <button class="gallery-nav-btn next-btn" onclick="scrollGallery('next')"><i class="fas fa-chevron-left"></i></button>
+        </div>
+    </section>
+
     <!-- بنر إضافي -->
     <div class="container fade-in">
-        <img src="بانر شركة نقل عفش.webp" alt="الأمانة لنقل العفش" class="promo-banner" loading="lazy">
+        <img src="galleria/بانر شركة نقل عفش.webp" alt="الأمانة لنقل العفش" class="promo-banner" loading="lazy">
     </div>
 
     <!-- قسم لماذا تختارنا -->
@@ -319,12 +333,28 @@
         </div>
     </section>
 
+    <!-- شريط تقييمات جوجل -->
+    <div class="google-reviews-container container fade-in">
+        <div class="google-review-box">
+            <div class="google-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google Logo">
+                <span>تقييمات Google</span>
+            </div>
+            <div class="rating-score">
+                <strong>4.9</strong>
+                <div class="stars" style="color: #fbbc05;">⭐⭐⭐⭐⭐</div>
+            </div>
+            <p class="review-count">استناداً إلى <strong>1,254 مراجعة</strong></p>
+            <a href="#" class="review-btn">قيّمنا الآن</a>
+        </div>
+    </div>
+
     <!-- قسم مناطق التغطية (خريطة تفاعلية) -->
     <section class="coverage-section container fade-in">
         <h2 class="section-title">مناطق تغطية خدماتنا في المملكة</h2>
         <p style="text-align: center; margin-bottom: 20px; color: #666;">نقدم خدماتنا في جميع أحياء الرياض، ونتوسع لنغطي المدن الرئيسية (جدة، الدمام، مكة المكرمة) قريباً.</p>
         <div class="coverage-map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14863584.606248282!2d35.61746250758376!3d24.53632565606365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15e7b33fe7952a41%3A0x5960504bc21ab69b!2sSaudi%20Arabia!5e0!3m2!1sen!2ssa!4v1709636000000!5m2!1sen!2ssa" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14863584.606248282!2d35.61746250758376!3d24.53632565606365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15e7b33fe7952a41%3A0x5960504bc21ab69b!2sSaudi%20Arabia!5e0!3m2!1sar!2ssa!4v1709636000000!5m2!1sar!2ssa" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
 
@@ -445,6 +475,12 @@
         <a href="https://wa.me/201110760081" class="sticky-btn whatsapp-btn">
             <i class="fab fa-whatsapp"></i> واتساب
         </a>
+    </div>
+
+    <!-- Lightbox لعرض الصور -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+        <span class="lightbox-close" onclick="closeLightboxBtn()">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" alt="صورة مكبرة">
     </div>
 
     <!-- سكربت بسيط لفتح وإغلاق القائمة في الجوال -->
@@ -603,6 +639,72 @@
                 alert("تم نسخ رابط الموقع! يمكنك إرساله لأصدقائك الآن.");
             }
         });
+
+        // --- 7. كود معرض الصور التلقائي و Lightbox ---
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const galleryGrid = document.getElementById('galleryGrid');
+        const maxImages = 20; // الحد الأقصى للصور التي سيتم البحث عنها في مجلد galleria
+
+        for (let i = 1; i <= maxImages; i++) {
+            const galleryItem = document.createElement('div');
+            galleryItem.className = 'gallery-item shine-effect';
+
+            const img = document.createElement('img');
+            img.src = `galleria/${i}.webp`;
+            img.alt = `صورة من أعمالنا رقم ${i}`;
+            img.loading = 'lazy';
+
+            // إخفاء العنصر إذا لم يتم تحميل الصورة (لأنها غير موجودة)
+            img.onerror = function() {
+                galleryItem.style.display = 'none';
+            };
+            
+            // فتح الصورة في Lightbox عند الضغط
+            img.addEventListener('click', function() {
+                lightbox.style.display = "flex";
+                lightboxImg.src = this.src;
+            });
+
+            galleryItem.appendChild(img);
+            galleryGrid.appendChild(galleryItem);
+        }
+
+        // --- 8. تمرير تلقائي للمعرض ---
+        function scrollGallery(direction) {
+            const scrollAmount = galleryGrid.clientWidth;
+            if (direction === 'next') {
+                galleryGrid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            } else {
+                galleryGrid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            }
+        }
+
+        function autoScrollGallery() {
+            // في المواقع العربية RTL، التمرير لليسار (التالي) يتطلب قيمة سالبة
+            if (galleryGrid.scrollLeft <= -(galleryGrid.scrollWidth - galleryGrid.clientWidth) + 10) {
+                galleryGrid.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                scrollGallery('next');
+            }
+        }
+
+        // تفعيل التمرير التلقائي كل 2 ثانية
+        let galleryInterval = setInterval(autoScrollGallery, 1000);
+
+        // إيقاف التمرير عند وضع الماوس، واستئنافه عند إزالته
+        galleryGrid.addEventListener('mouseenter', () => clearInterval(galleryInterval));
+        galleryGrid.addEventListener('mouseleave', () => galleryInterval = setInterval(autoScrollGallery, 1000));
+        
+        function closeLightboxBtn() {
+            lightbox.style.display = "none";
+        }
+
+        function closeLightbox(event) {
+            if (event.target === lightbox) {
+                lightbox.style.display = "none";
+            }
+        }
     </script>
 
 </body>
